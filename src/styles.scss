@@ -1,0 +1,18 @@
+@import "primeicons/primeicons.css";
+
+/* Asegúrate de que html y body ocupen toda la pantalla */
+html, body {
+    height: 100%;  /* Ambos deben ocupar el 100% de la altura */
+    margin: 0;     /* Elimina márgenes predeterminados */
+    padding: 0;    /* Elimina relleno predeterminado */
+}
+
+body {
+    width: 100%;   /* Asegúrate de que el body también ocupe el 100% del ancho */
+    background-color: #dbc09d;
+}
+
+html {
+    scroll-behavior: smooth; // Agrega esto para hacer que el scroll sea suave
+  }
+  

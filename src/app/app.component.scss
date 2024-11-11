@@ -1,0 +1,360 @@
+.layout {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "contacto";
+    grid-template-rows: 10% 200% 10%; 
+    gap: 8px;
+}
+  
+/* Cabecera fija en la parte superior */
+.header {
+    grid-area: header;
+    position: fixed; /* Esto fija la cabecera */
+    top: 0;          /* La coloca en la parte superior */
+    left: 0;
+    background-image: url('/assets/cabecera.jfif'); /* Ruta de la imagen */
+    width: 100%;
+    height: 11%;      /* Ajusta la altura del header */
+    z-index: 10;      /* Asegura que la cabecera esté por encima del contenido */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .navbar-default{
+        display: flex;
+
+        a{
+            margin: 0 10px;
+        }
+    }
+}
+
+/* Estilos para el navbar por defecto (pantallas grandes) */
+.navbar-default {
+    display: block; /* Se muestra por defecto en pantallas grandes */
+  }
+  
+  /* Navbar móvil (se oculta por defecto) */
+  .navbar-mobile {
+    display: none; /* Oculto por defecto */
+  }
+  
+  /* Estilos específicos para el menú móvil */
+  .navbar-mobile .modal {
+    display: none; /* Inicialmente el modal está oculto */
+  }
+  
+  .navbar-mobile .modal.open {
+    display: block; /* Cuando el modal está abierto, se muestra */
+  }
+  
+/* En pantallas menores a 600px */
+@media (max-width: 600px) {
+    .navbar-default {
+      display: none !important; /* Asegurarse de que el navbar por defecto no se muestre */
+    }
+
+    .navbar-mobile {
+      position: fixed;
+      top: 4%;
+      left: 90%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      z-index: 1000;
+    }
+
+    /* Contenedor que aloja el nombre y el icono */
+    .navbar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 15px 20px;
+      background-color: black; /* Fondo del navbar */
+    }
+
+    .navbar-brand {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar-mobile i {
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* El modal del menú */
+    .modal {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      z-index: 999;
+      visibility: hidden; /* Inicialmente oculto */
+      opacity: 0; /* Completamente transparente */
+      transition: opacity 0.5s ease, visibility 0.5s ease; /* Transición suave */
+    }
+
+     /* Icono de cierre usando PrimeNG */
+  .pi-times {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+    /* Cuando el modal está abierto */
+    .modal.open {
+      visibility: visible; /* Mostrar el modal */
+      opacity: 1; /* Hacerlo visible */
+    }
+
+    /* La lista de navegación */
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      right: -250px; /* Inicialmente fuera de la pantalla */
+      width: 250px; /* El ancho del menú */
+      height: 100%;
+      transition: right 1s ease, opacity 1s ease; /* Transición suave para entrar y salir */
+      opacity: 0; /* Empieza invisible */
+    }
+
+    /* Cuando el menú está abierto */
+    .modal.open .nav-links {
+      right: 0; /* Deslizar el menú a la derecha */
+      opacity: 1; /* Hacerlo visible */
+    }
+
+    .nav-links li {
+        margin-top: 15%;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+    }
+
+    .nav-links li a:hover {
+      text-decoration: underline;
+    }
+}
+
+  
+  
+/* Contenido principal que se desplazará */
+.main {
+    grid-area: main;
+}
+
+
+.quienessomos-img {
+    width: 100%;
+    height: auto;
+}
+
+/* Para pantallas mayores a 1000px */
+@media (min-width: 1000px) {
+    .quienessomos-img {
+      height: 18%;
+        content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
+    }
+}
+
+/* Para pantallas entre 500px y 1000px */
+@media (min-width: 600px) and (max-width: 999px) {
+  .quienessomos-img {
+    height: 11%;
+      content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
+  }
+}
+
+/* Para pantallas menores a 500px */
+@media (max-width: 599px) {
+  .quienessomos-img {
+    height: 5%;
+      content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
+  }
+}
+
+.layout-main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);  /* Tres columnas dentro de la categoría */
+    gap: 8px;
+}
+
+/* Ajustar la altura de los h2 */
+.category h2 {
+    text-align: center;
+    font-size: xx-large;
+    margin: 0;
+    padding: 5px 0;  /* Reduce el espacio arriba y abajo del título */
+    grid-column: 1 / -1;  /* Ocupa toda la fila */
+}
+
+/* Cambiar el grid de la categoría para que las tarjetas sean más altas y menos anchas */
+.category {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Tres columnas */
+    grid-template-rows: auto 3fr 3fr;  /* Aumentar la altura de las filas de las tarjetas */
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Cambiar el ancho de las tarjetas para hacerlas más estrechas */
+.category div {
+    display: grid;
+    width: 80%;  /* Reduce la anchura de las tarjetas */
+    margin: 0 auto;  /* Centra las tarjetas dentro de la columna */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 100%;  /* Mantiene la altura total ajustada */
+}
+
+
+/* Ajustamos las imágenes */
+.category div .image {
+    width: 100%;
+    height: 100%;  /* La imagen ocupa toda la altura de la tarjeta */
+    background-size: cover;  /* La imagen cubre el 100% de la sección */
+    background-position: center;  /* Centra la imagen */
+    position: absolute;  /* Para que la imagen esté fija en el fondo */
+    top: 0;
+    left: 0;
+}
+
+/* Ajustamos el contenido */
+.category div .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);  /* Fondo negro con un poco de transparencia */
+    color: white;
+    padding: 10px;
+    position: absolute;  /* Posicionamos sobre la imagen */
+    bottom: 0;  /* Pega el contenido a la parte inferior */
+    width: 100%;  /* Asegura que el contenido cubra toda la base */
+    height: 20%;  /* El contenido ocupará el 30% de la tarjeta */
+    text-align: left;  /* Alinea el contenido a la izquierda */
+    box-sizing: border-box;  /* Asegura que el padding no desborde el contenido */
+}
+
+/* Media query para pantallas entre 600px y 1000px */
+@media (min-width: 600px) and (max-width: 1000px) {
+
+    /* Cambiar el layout para pantallas pequeñas */
+    .layout {
+        grid-template-rows: 10% 450% auto;  /* Ajustamos las filas del grid */
+    }
+
+    .category {
+        grid-template-columns: 1fr 1fr; /* Cambiar a dos columnas */
+        grid-template-rows: auto;  /* Las filas se ajustan a la altura del contenido */
+    }
+
+    .category div {
+        width: 100%; /* Las tarjetas ocuparán el 100% del ancho disponible en cada columna */
+        height: 250px; /* Establecer una altura para la tarjeta */
+        min-height: 250px; /* Asegura que la altura mínima de las tarjetas sea de 250px */
+        margin-bottom: 20px; /* Espaciado entre las tarjetas */
+        position: relative; /* Necesario para posicionar el contenido en la parte inferior */
+        overflow: hidden; /* Evita que el contenido se desborde */
+    }
+    
+    .category div .image {
+        height: 100%; /* La imagen ocupa toda la altura de la tarjeta */
+        width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+        object-fit: cover; /* La imagen cubre la tarjeta sin deformarse */
+    }
+
+    .category div .content {
+        position: absolute; /* Posiciona el contenido en relación al contenedor */
+        bottom: 0; /* Fija el contenido en la parte inferior */
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho */
+        height: 30%; /* El contenido ocupará el 30% de la altura de la tarjeta */
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+        color: white; /* Texto en blanco */
+        padding: 10px; /* Espaciado interior */
+        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+    }
+}
+
+/* Media query para pantallas menores a 600px */
+@media (max-width: 599px) {
+
+    /* Cambiar el layout para pantallas pequeñas */
+    .layout {
+        grid-template-rows: 10% 830% auto;  /* Ajustamos las filas del grid */
+    }
+
+    .category {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+        grid-template-rows: auto;  /* Las filas se ajustan a la altura del contenido */
+    }
+
+    .category div {
+        width: 100%; /* Las tarjetas ocuparán el 100% del ancho disponible */
+        height: 250px; /* Establecer una altura para la tarjeta */
+        min-height: 250px; /* Asegura que la altura mínima de las tarjetas sea de 250px */
+        margin-bottom: 20px; /* Espaciado entre las tarjetas */
+        position: relative; /* Necesario para posicionar el contenido en la parte inferior */
+        overflow: hidden; /* Evita que el contenido se desborde */
+    }
+    
+    .category div .image {
+        height: 100%; /* La imagen ocupa toda la altura de la tarjeta */
+        width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+        object-fit: cover; /* La imagen cubre la tarjeta sin deformarse */
+    }
+
+    .category div .content {
+        position: absolute; /* Posiciona el contenido en relación al contenedor */
+        bottom: 0; /* Fija el contenido en la parte inferior */
+        width: 100%; /* Asegura que el contenido ocupe todo el ancho */
+        height: 30%; /* El contenido ocupará el 30% de la altura de la tarjeta */
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+        color: white; /* Texto en blanco */
+        padding: 10px; /* Espaciado interior */
+        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+    }
+}
+  
+  /* Sección "Contacto" */
+  .contacto {
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 2px solid black; /* Borde superior */
+    border-bottom: 2px solid black; /* Borde inferior */
+  }
+  
+  .contacto h2 {
+    margin-bottom: 10px;
+  }

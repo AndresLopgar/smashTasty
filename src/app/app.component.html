@@ -1,0 +1,179 @@
+<section class="layout">
+  <div class="header">
+    <div class="logo">SMASH TASTY</div>
+    <!-- Navbar por defecto (visible en pantallas grandes) -->
+<nav class="navbar-default">
+  <a href="#quienessomos">Quienes somos</a>
+  <a href="#hamburguesas">Hamburguesas</a>
+  <a href="#ensaladas">Ensaladas</a>
+  <a href="#pasta">Pasta</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- Navbar móvil (aparece en pantallas pequeñas) -->
+<nav class="navbar-mobile">
+  <i class="pi pi-bars" style="color: white" (click)="toggleMenu()"></i>
+  <div class="modal" [ngClass]="{'open': menuOpen}">
+    <i class="pi pi-times" style="color: white" (click)="closeMenu()"></i>
+    <ul class="nav-links">
+      <li><a href="#quienessomos" (click)="closeMenu()">Quienes somos</a></li>
+      <li><a href="#hamburguesas" (click)="closeMenu()">Hamburguesas</a></li>
+      <li><a href="#ensaladas" (click)="closeMenu()">Ensaladas</a></li>
+      <li><a href="#pasta" (click)="closeMenu()">Pasta</a></li>
+      <li><a href="#contacto" (click)="closeMenu()">Contacto</a></li>
+    </ul>
+  </div>
+  
+</nav>
+
+
+
+  </div>
+  <div class="main">
+    <img id="quienessomos" src="../assets/banner.jpg" alt="Quiénes Somos" class="quienessomos-img">
+    <section class="layout-main">
+      <div class="category" id="hamburguesas">
+        <h2>Hamburguesas</h2>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Clasica');"></div>
+          <div class="content">
+            <h3>Hamburguesa Clásica</h3>
+            <span>$8.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+BBQ');"></div>
+          <div class="content">
+            <h3>Hamburguesa BBQ</h3>
+            <span>$10.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Vegetariana');"></div>
+          <div class="content">
+            <h3>Hamburguesa Vegetariana</h3>
+            <span>$9.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Mexicana');"></div>
+          <div class="content">
+            <h3>Hamburguesa Mexicana</h3>
+            <span>$11.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Double');"></div>
+          <div class="content">
+            <h3>Hamburguesa Double</h3>
+            <span>$12.49</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Deluxe');"></div>
+          <div class="content">
+            <h3>Hamburguesa Deluxe</h3>
+            <span>$14.49</span>
+          </div>
+        </div>
+      </div>
+      <div class="category" id="ensaladas">
+        <h2>Ensaladas</h2>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Cesars');"></div>
+          <div class="content">
+            <h3>Ensalada César</h3>
+            <span>$7.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Mediterranea');"></div>
+          <div class="content">
+            <h3>Ensalada Mediterránea</h3>
+            <span>$8.49</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Tropical');"></div>
+          <div class="content">
+            <h3>Ensalada Tropical</h3>
+            <span>$9.49</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Verde');"></div>
+          <div class="content">
+            <h3>Ensalada Verde</h3>
+            <span>$6.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Tocineta');"></div>
+          <div class="content">
+            <h3>Ensalada con Tocineta</h3>
+            <span>$8.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Rusa');"></div>
+          <div class="content">
+            <h3>Ensalada Rusa</h3>
+            <span>$7.49</span>
+          </div>
+        </div>
+      </div>
+      <div class="category" id="pasta">
+        <h2>Pasta</h2>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Espaguetis+Bolognesa');"></div>
+          <div class="content">
+            <h3>Espaguetis a la Bolognesa</h3>
+            <span>$12.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Fettuccine+Alfredo');"></div>
+          <div class="content">
+            <h3>Fettuccine Alfredo</h3>
+            <span>$13.49</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Lasagna+Vegetariana');"></div>
+          <div class="content">
+            <h3>Lasagna Vegetariana</h3>
+            <span>$14.99</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ravioli+De+Queso');"></div>
+          <div class="content">
+            <h3>Ravioli de Queso</h3>
+            <span>$15.49</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Macarrones+con+Queso');"></div>
+          <div class="content">
+            <h3>Macarrones con Queso</h3>
+            <span>$11.49</span>
+          </div>
+        </div>
+        <div>
+          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Penne+Arrabbiata');"></div>
+          <div class="content">
+            <h3>Penne Arrabbiata</h3>
+            <span>$12.49</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Sección "Contacto" -->
+    <div class="contacto" id="contacto">
+      <h2>Contacto</h2>
+      <p>Si tienes alguna duda o deseas realizar un pedido, no dudes en contactarnos. ¡Estaremos encantados de atenderte!</p>
+      <br><br>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
