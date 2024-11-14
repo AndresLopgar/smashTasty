@@ -209,23 +209,26 @@
 
 
 .quienessomos-img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto; /* Mejor usar auto para mantener la proporción original de la imagen */
 }
 
 /* Para pantallas mayores a 1000px */
 @media (min-width: 1000px) {
-    .quienessomos-img {
-      height: 18%;
-        content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
-    }
+  .quienessomos-img {
+    margin-top: 1%;
+      height: 20%; /* Ajusta según lo que necesites */
+      content: url('../assets/Smash.png');
+  }
 }
+
 
 /* Para pantallas entre 500px y 1000px */
 @media (min-width: 600px) and (max-width: 999px) {
   .quienessomos-img {
+    margin-top: 1.5%;
     height: 6%;
-      content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
+    content: url('../assets/Smash.png');
   }
 }
 
@@ -233,7 +236,7 @@
 @media (max-width: 599px) {
   .quienessomos-img {
     height: 3%;
-      content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
+    content: url('../assets/Smash.png');
   }
 }
 
@@ -299,7 +302,7 @@
     position: absolute;  /* Posicionamos sobre la imagen */
     bottom: 0;  /* Pega el contenido a la parte inferior */
     width: 100%;  /* Asegura que el contenido cubra toda la base */
-    height: 20%;  /* El contenido ocupará el 30% de la tarjeta */
+    height: 20% !important;  /* El contenido ocupará el 30% de la tarjeta */
     text-align: left;  /* Alinea el contenido a la izquierda */
     box-sizing: border-box;  /* Asegura que el padding no desborde el contenido */
 }
@@ -333,15 +336,17 @@
     }
 
     .category div .content {
-        position: absolute; /* Posiciona el contenido en relación al contenedor */
-        bottom: 0; /* Fija el contenido en la parte inferior */
-        width: 100%; /* Asegura que el contenido ocupe todo el ancho */
-        height: 30%; /* El contenido ocupará el 30% de la altura de la tarjeta */
-        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-        color: white; /* Texto en blanco */
-        padding: 10px; /* Espaciado interior */
-        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
-    }
+      position: absolute; /* Posiciona el contenido sobre la imagen */
+      bottom: 0; /* Fija el contenido al fondo de la imagen */
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+      color: white; /* Color del texto */
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between; /* Espaciado entre los elementos del contenido */
+      align-items: center; /* Alinea el contenido al centro de la altura */
+  }
 }
 
 /* Media query para pantallas menores a 600px */
@@ -373,15 +378,16 @@
     }
 
     .category div .content {
-        position: absolute; /* Posiciona el contenido en relación al contenedor */
-        bottom: 0; /* Fija el contenido en la parte inferior */
-        width: 100%; /* Asegura que el contenido ocupe todo el ancho */
-        height: 30%; /* El contenido ocupará el 30% de la altura de la tarjeta */
-        background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-        color: white; /* Texto en blanco */
-        padding: 10px; /* Espaciado interior */
-        box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
-    }
+      position: absolute; /* Posiciona el contenido en relación al contenedor */
+      bottom: 0; /* Asegura que el contenido esté pegado al fondo */
+      width: 100%; /* Asegura que el contenido ocupe todo el ancho */
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+      color: white; /* Texto en blanco */
+      padding: 10px; /* Espaciado interior */
+      display: flex;
+      align-items: center; /* Alinea el contenido al fondo */
+  }
+  
 
     /* Cambiar el layout para pantallas pequeñas */
     .contact-info {
