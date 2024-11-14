@@ -1,11 +1,10 @@
 <section class="layout">
   <div class="header">
     <div class="logo">
-      <img src="../assets/logo.png">
+      <a href="#quienessomos"><img src="../assets/logo.png"></a>
   </div>
     <!-- Navbar por defecto (visible en pantallas grandes) -->
 <nav class="navbar-default">
-  <a href="#quienessomos">QUIENES SOMOS</a>
   <a href="#hamburguesas">HAMBURGUESAS</a>
   <a href="#ensaladas">ENSALADAS</a>
   <a href="#pasta">PASTA</a>
@@ -18,7 +17,6 @@
   <div class="modal" [ngClass]="{'open': menuOpen}">
     <i class="pi pi-times" style="color: white" (click)="closeMenu()"></i>
     <ul class="nav-links">
-      <li><a href="#quienessomos" (click)="closeMenu()">Quienes somos</a></li>
       <li><a href="#hamburguesas" (click)="closeMenu()">Hamburguesas</a></li>
       <li><a href="#ensaladas" (click)="closeMenu()">Ensaladas</a></li>
       <li><a href="#pasta" (click)="closeMenu()">Pasta</a></li>
@@ -36,42 +34,42 @@
       <div class="category" id="hamburguesas">
         <h2>Hamburguesas</h2>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Clasica');"></div>
+          <div class="image" style="background-image: url(assets/banner.jpg);"></div>
           <div class="content">
             <h3>Hamburguesa Clásica</h3>
             <span>$8.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+BBQ');"></div>
+          <div class="image" style="background-image: url(assets/banner.jpg);"></div>
           <div class="content">
             <h3>Hamburguesa BBQ</h3>
             <span>$10.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Vegetariana');"></div>
+          <div class="image" style="background-image: url(assets/banner.jpg);"></div>
           <div class="content">
             <h3>Hamburguesa Vegetariana</h3>
             <span>$9.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Mexicana');"></div>
+          <div class="image" style="background-image: url(assets/banner.jpg);"></div>
           <div class="content">
             <h3>Hamburguesa Mexicana</h3>
             <span>$11.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Double');"></div>
+          <div class="image" style="background-image: url(assets/banner.jpg);"></div>
           <div class="content">
             <h3>Hamburguesa Double</h3>
             <span>$12.49</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Hamburguesa+Deluxe');"></div>
+          <div class="image" style="background-image: url(assets/banner.jpg);"></div>
           <div class="content">
             <h3>Hamburguesa Deluxe</h3>
             <span>$14.49</span>
@@ -81,42 +79,42 @@
       <div class="category" id="ensaladas">
         <h2>Ensaladas</h2>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Cesars');"></div>
+          <div class="image" style="background-image: url(assets/ensalada.jfif);"></div>
           <div class="content">
             <h3>Ensalada César</h3>
             <span>$7.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Mediterranea');"></div>
+          <div class="image" style="background-image: url(assets/ensalada.jfif);"></div>
           <div class="content">
             <h3>Ensalada Mediterránea</h3>
             <span>$8.49</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Tropical');"></div>
+          <div class="image" style="background-image: url(assets/ensalada.jfif);"></div>
           <div class="content">
             <h3>Ensalada Tropical</h3>
             <span>$9.49</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Verde');"></div>
+          <div class="image" style="background-image: url(assets/ensalada.jfif);"></div>
           <div class="content">
             <h3>Ensalada Verde</h3>
             <span>$6.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Tocineta');"></div>
+          <div class="image" style="background-image: url(assets/ensalada.jfif);"></div>
           <div class="content">
             <h3>Ensalada con Tocineta</h3>
             <span>$8.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ensalada+Rusa');"></div>
+          <div class="image" style="background-image: url(assets/ensalada.jfif);"></div>
           <div class="content">
             <h3>Ensalada Rusa</h3>
             <span>$7.49</span>
@@ -126,42 +124,42 @@
       <div class="category" id="pasta">
         <h2>Pasta</h2>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Espaguetis+Bolognesa');"></div>
+          <div class="image" style="background-image: url(assets/pasta.jfif);"></div>
           <div class="content">
             <h3>Espaguetis a la Bolognesa</h3>
             <span>$12.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Fettuccine+Alfredo');"></div>
+          <div class="image" style="background-image: url(assets/pasta.jfif);"></div>
           <div class="content">
             <h3>Fettuccine Alfredo</h3>
             <span>$13.49</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Lasagna+Vegetariana');"></div>
+          <div class="image" style="background-image: url(assets/pasta.jfif);"></div>
           <div class="content">
             <h3>Lasagna Vegetariana</h3>
             <span>$14.99</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Ravioli+De+Queso');"></div>
+          <div class="image" style="background-image: url(assets/pasta.jfif);"></div>
           <div class="content">
             <h3>Ravioli de Queso</h3>
             <span>$15.49</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Macarrones+con+Queso');"></div>
+          <div class="image" style="background-image: url(assets/pasta.jfif);"></div>
           <div class="content">
             <h3>Macarrones con Queso</h3>
             <span>$11.49</span>
           </div>
         </div>
         <div>
-          <div class="image" style="background-image: url('https://via.placeholder.com/400x300.png?text=Penne+Arrabbiata');"></div>
+          <div class="image" style="background-image: url(assets/pasta.jfif);"></div>
           <div class="content">
             <h3>Penne Arrabbiata</h3>
             <span>$12.49</span>
@@ -169,12 +167,30 @@
         </div>
       </div>
     </section>
-    <!-- Sección "Contacto" -->
     <div class="contacto" id="contacto">
       <h2>Contacto</h2>
-      <p>Si tienes alguna duda o deseas realizar un pedido, no dudes en contactarnos. ¡Estaremos encantados de atenderte!</p>
+      <div class="contact-info">
+        <!-- Información de contacto a la izquierda -->
+        <div class="contact-left">
+          <p><strong>Dirección:</strong> C. las Marismas, 1, 41909 Salteras, Sevilla</p>
+          <p><strong>Teléfono 1:</strong> 624 32 87 70</p>
+          <p><strong>Teléfono 2:</strong> 634 22 44 55</p> <!-- Añadí un segundo número de teléfono por si es necesario -->
+        </div>
+        <!-- Mapa a la derecha -->
+        <div class="contact-right">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124124.21903287032!2d-6.034090539948832!3d37.41223280404992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd12b1b1a7db4319%3A0x1e14d7b59859b405!2sC.%20las%20Marismas%2C%201%2C%2041909%20Salteras%2C%20Sevilla%2C%20España!5e0!3m2!1ses!2sus!4v1699432382794!5m2!1ses!2sus" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
       <br><br>
     </div>
+    
   </div>
 </section>
 <app-footer></app-footer>

@@ -9,7 +9,7 @@
     grid-template-rows: 4% 200% 10%; 
     gap: 8px;
 }
-  
+
 .header {
   grid-area: header;
   position: fixed;
@@ -36,7 +36,9 @@
 }
 
 .navbar-default a {
-    margin: 0 10px;
+  font-family: 'Lobster', cursive;
+    height: 15%;
+    margin: 0 30px;
     color: black;
     text-decoration: none;
     position: relative; /* Necesario para posicionar el ::after */
@@ -380,6 +382,51 @@
         padding: 10px; /* Espaciado interior */
         box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
     }
+
+    /* Cambiar el layout para pantallas pequeñas */
+    .contact-info {
+      display: flex;
+      flex-direction: column; /* Cambiar a columna */
+      align-items: center !important; /* Alinea los elementos a la izquierda */
+      width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  }
+
+  .contact-left {
+      width: 100% !important; /* La columna izquierda ocupa el 100% del ancho */
+      margin-bottom: 20px; /* Espaciado entre las columnas */
+  }
+
+  .contact-right {
+      width: 100% !important; /* La columna derecha ocupa el 100% del ancho */
+  }
+
+  /* Estilo para el mapa */
+  .contact-right iframe {
+      width: 100%; /* El iframe ocupa todo el ancho */
+      height: 300px; /* Puedes ajustar la altura si lo deseas */
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .contacto {
+      margin-top: 20px;
+      padding: 20px;
+      border-top: 2px solid black; /* Borde superior */
+  }
+
+  .contacto h2 {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .contact-left p {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+
+  .contact-left strong {
+      font-weight: bold;
+  }
 }
   
   /* Sección "Contacto" */
@@ -387,9 +434,42 @@
     margin-top: 20px;
     padding: 20px;
     border-top: 2px solid black; /* Borde superior */
-    border-bottom: 2px solid black; /* Borde inferior */
   }
   
   .contacto h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 45%; /* Ajusta el ancho de la columna izquierda */
+  }
+  
+  .contact-left p {
+    font-size: 16px;
     margin-bottom: 10px;
+  }
+  
+  .contact-left strong {
+    font-weight: bold;
+  }
+  
+  .contact-right {
+    width: 45%; /* Ajusta el ancho de la columna derecha */
+  }
+  
+  .contact-right iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }

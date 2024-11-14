@@ -20,25 +20,31 @@ export class AppComponent {
     // Controlar la visibilidad de los navbar
     document.querySelectorAll('.nav-links a').forEach((anchor) => {
       const anchorElement = anchor as HTMLElement;
-
+  
       anchorElement.addEventListener('click', (e) => {
         e.preventDefault();  // Evitar la acción por defecto de los enlaces
-
+  
+        // Obtener el ID del target desde el atributo href
         const targetId = anchorElement.getAttribute('href');
-        if (targetId) {
+        if (targetId && targetId.startsWith("#")) {
           const targetElement = document.querySelector(targetId) as HTMLElement;
-
+  
           if (targetElement) {
-            const offsetTop = targetElement.offsetTop;
-            const headerHeight = document.querySelector('.header')?.clientHeight || 0;
-            const offsetScroll = offsetTop - headerHeight;
-
+            // Obtener la altura de la cabecera (header), considerando su posición fija
+            const header = document.querySelector('.header') as HTMLElement;
+            const headerHeight = header ? header.clientHeight : 0;
+  
+            // Calcular el desplazamiento final, considerando la altura del header y el margen adicional
+            const targetTopPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetScroll = targetTopPosition - headerHeight;
+  
+            // Desplazarse suavemente hasta la posición calculada
             window.scrollTo({
               top: offsetScroll,
               behavior: 'smooth'
             });
-
-            // Cerrar el navbar móvil después de hacer clic en un enlace
+  
+            // Cerrar el navbar móvil después de hacer clic en un enlace, si es necesario
             this.menuOpen = false;
           }
         }
