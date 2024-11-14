@@ -6,31 +6,66 @@
       "header"
       "main"
       "contacto";
-    grid-template-rows: 10% 200% 10%; 
+    grid-template-rows: 4% 200% 10%; 
     gap: 8px;
 }
   
-/* Cabecera fija en la parte superior */
 .header {
-    grid-area: header;
-    position: fixed; /* Esto fija la cabecera */
-    top: 0;          /* La coloca en la parte superior */
-    left: 0;
-    background-image: url('/assets/cabecera.jfif'); /* Ruta de la imagen */
-    width: 100%;
-    height: 11%;      /* Ajusta la altura del header */
-    z-index: 10;      /* Asegura que la cabecera esté por encima del contenido */
+  grid-area: header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('/assets/banerSalsa.png');
+  background-size: cover; /* Ajusta la imagen para que cubra todo el ancho */
+  background-position: top; /* Centra la imagen en la parte superior */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  width: 100%;
+  height: 28%; /* Ajusta la altura del header */
+  z-index: 10;
+  display: flex;
+  justify-content: space-around;
+
+  img{
+    margin-top: 8%;
+    height: 35%;
+  }
+
+  .navbar-default {
+    margin-top: 2%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+}
 
-    .navbar-default{
-        display: flex;
+.navbar-default a {
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+    position: relative; /* Necesario para posicionar el ::after */
+}
 
-        a{
-            margin: 0 10px;
-        }
-    }
+/* Pseudo-elemento para la línea animada */
+.navbar-default a::after {
+    content: '';
+    position: absolute;
+    top: 20px; /* Ajusta la distancia de la línea debajo del texto */
+    left: 20%; /* Comienza en el centro */
+    width: 0;
+    height: 2px; /* Grosor de la línea */
+    background-color: black; /* Color de la línea */
+    transition: width 0.3s ease, left 0.3s ease; /* Suaviza la animación */
+}
+
+/* Animación cuando se hace hover en el enlace */
+.navbar-default a:hover::after {
+    width: 100%; /* La línea se expande desde el centro hasta el borde derecho */
+    left: 0%; /* Comienza desde el centro */
+}
+
+/* Animación cuando se quita el cursor */
+.navbar-default a:not(:hover)::after {
+    width: 0;
+    left: 50%; /* La línea vuelve al centro */
+}
+
 }
 
 /* Estilos para el navbar por defecto (pantallas grandes) */
@@ -60,8 +95,8 @@
 
     .navbar-mobile {
       position: fixed;
-      top: 4%;
-      left: 90%;
+      top: 3.5%;
+      left: 85%;
       width: 100%;
       height: 100%;
       display: flex;
@@ -187,7 +222,7 @@
 /* Para pantallas entre 500px y 1000px */
 @media (min-width: 600px) and (max-width: 999px) {
   .quienessomos-img {
-    height: 11%;
+    height: 6%;
       content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
   }
 }
@@ -195,7 +230,7 @@
 /* Para pantallas menores a 500px */
 @media (max-width: 599px) {
   .quienessomos-img {
-    height: 5%;
+    height: 3%;
       content: url('../assets/banner.jpg'); /* Cambia la fuente de la imagen */
   }
 }
@@ -272,7 +307,7 @@
 
     /* Cambiar el layout para pantallas pequeñas */
     .layout {
-        grid-template-rows: 10% 450% auto;  /* Ajustamos las filas del grid */
+        grid-template-rows: 6% 450% auto;  /* Ajustamos las filas del grid */
     }
 
     .category {
@@ -312,7 +347,7 @@
 
     /* Cambiar el layout para pantallas pequeñas */
     .layout {
-        grid-template-rows: 10% 830% auto;  /* Ajustamos las filas del grid */
+        grid-template-rows: 7% 830% auto;  /* Ajustamos las filas del grid */
     }
 
     .category {
